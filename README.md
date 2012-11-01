@@ -1,4 +1,6 @@
-jQuery-fader
-============
+#jQuery fader
 
-A fader written in jQuery to fade between items
+A fader to fade between items
+
+###Notes
+Respond uses jQuery 1.8.2

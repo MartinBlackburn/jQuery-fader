@@ -1,0 +1,44 @@
+/*----------------------------------------------------------------------------------------------------------------*\
+    FADER
+\*----------------------------------------------------------------------------------------------------------------*/
+.fader {
+	width: 980px;
+	margin: 0 auto;
+	
+	position: relative;
+}
+
+.fader .faderItem {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.fader .faderItem.selected {
+    position: relative;
+}
+
+.fader .displayNone {
+	display: none;
+}
+
+.fader ul {
+    list-style: none;
+    
+    text-align: center;
+}
+
+.fader li {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.fader a {
+    color: #333;
+    text-decoration: none;
+}
+
+.fader a:hover,
+.fader a.selected {
+    color: #73BADE;
+}
