@@ -2,16 +2,16 @@
     FADER
 \*----------------------------------------------------------------------------------------------------------------*/
 .fader {
-	width: 980px;
-	margin: 0 auto;
-	
-	position: relative;
+    width: 980px;
+    margin: 0 auto;
+    
+    position: relative;
 }
 
 .fader .faderItem {
-	position: absolute;
-	top: 0;
-	left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .fader .faderItem.selected {
@@ -19,7 +19,7 @@
 }
 
 .fader .displayNone {
-	display: none;
+    display: none;
 }
 
 .fader ul {
