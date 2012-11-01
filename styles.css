@@ -18,7 +18,7 @@
     position: relative;
 }
 
-.fader .displayNone {
+.fader .faderControls {
     display: none;
 }
 

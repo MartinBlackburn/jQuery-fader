@@ -4,11 +4,8 @@ Fader = function(fader)
     var fadeTime = 1000;
     var viewTime = 6000;
     
-    //show hidden slides and controls
-    fader.find(".displayNone").each(function() 
-    {
-        $(this).removeClass("displayNone");
-    });
+    //show controls
+    fader.find(".faderControls").css("display", "block");
     
     //controls
     $(".next").click(function(event) {
