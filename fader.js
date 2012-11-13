@@ -104,7 +104,7 @@ Fader = function(fader)
         //update controls
         controls().removeClass('selected');
         controls().eq(nextSlide).addClass('selected');
-    };
+    }
 };
 
 $(function() 
