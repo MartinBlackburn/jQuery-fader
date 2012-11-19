@@ -29,6 +29,10 @@ img {
     position: relative;
 }
 
+.fader .faderDisplay {
+    position: relative;
+}
+
 .fader .faderItem {
     position: absolute;
     top: 0;
@@ -43,23 +47,49 @@ img {
     display: none;
 }
 
-.fader ul {
+.fader .faderControls ul {
     list-style: none;
     
     text-align: center;
 }
 
-.fader li {
+.fader .faderControls li {
     margin-right: 10px;
     display: inline-block;
 }
 
-.fader a {
+.fader .faderControls a {
     color: #333;
     text-decoration: none;
 }
 
-.fader a:hover,
-.fader a.selected {
+.fader .faderControls a:hover,
+.fader .faderControls a.selected {
     color: #73BADE;
+}
+
+.fader .next,
+.fader .prev {
+    width: 39px;
+    height: 50px;
+    margin-top: -25px;
+    display: none;
+    
+    opacity: 1;
+    
+    position: absolute;
+    top: 50%;
+}
+
+.fader .next {
+    right: 0;
+}
+
+.fader .prev {
+    left: 0;
+}
+
+.fader .next:hover,
+.fader .prev:hover {
+    opacity: 0.6;
 }

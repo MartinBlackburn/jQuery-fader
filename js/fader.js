@@ -4,8 +4,13 @@ Fader = function(fader)
     var fadeTime = 1000;
     var viewTime = 6000;
     
+    //number of items
+    var numItems = fader.find(".faderItem").size();
+    
     //show controls
-    fader.find(".faderControls").css("display", "block");
+    if(numItems > 1) {
+        fader.find(".faderControls, .next, .prev").css("display", "block");
+    }
     
     //controls
     $(".next").click(function(event) {
@@ -31,7 +36,7 @@ Fader = function(fader)
             
             var slideTo = fader.find($(event.delegateTarget).parent()).index();
             
-            fadeItem(slideTo-1);
+            fadeItem(slideTo);
         }
     });
     
