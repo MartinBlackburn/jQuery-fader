@@ -1,6 +1,8 @@
-#jQuery fader
+#jQuery Fader
 
-A fader to fade between items
+A slider with a fade effect between items
+
+[View it in action here](http://martinblackburn.github.com/jQuery-fader/)
 
 ###Notes
-The fader uses jQuery 1.8.2
+This was written using jQuery 1.8.2
