@@ -9,7 +9,9 @@
 }
 
 .pageContainer {
+	max-width: 980px;
     padding: 20px;
+    margin: 0 auto;
 }
 
 img {
@@ -31,7 +33,6 @@ img {
     FADER
 \*----------------------------------------------------------------------------------------------------------------*/
 .fader {
-    max-width: 980px;
     margin: 0 auto;
     
     position: relative;

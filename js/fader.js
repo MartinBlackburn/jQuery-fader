@@ -12,22 +12,27 @@ Fader = function(fader)
         fader.find(".faderControls, .next, .prev").css("display", "block");
     }
     
+    //control buttons
+    var nextBtn = fader.find(".next");
+    var prevBtn = fader.find(".prev");
+    var quickBtn = fader.find(".quick");
+    
     //controls
-    $(".next").click(function(event) {
+    nextBtn.click(function(event) {
         event.preventDefault()
         
         resetTimer();
         fadeItem();
     });
     
-    $(".prev").click(function(event) {
+    prevBtn.click(function(event) {
         event.preventDefault()
         
         resetTimer();
         fadeItem(-1);
     });
     
-    $(".quick").click(function(event) {
+    quickBtn.click(function(event) {
         event.preventDefault()
         
         if(!$(event.delegateTarget).hasClass("selected"))
@@ -64,12 +69,14 @@ Fader = function(fader)
     
     function resetTimer()
     {
-        clearInterval(timer);
-        
-        timer = setInterval(function()
-        {
-            fadeItem();
-        }, fadeTime + viewTime);
+        if(numItems > 1) {
+            clearInterval(timer);
+            
+            timer = setInterval(function()
+            {
+                fadeItem();
+            }, fadeTime + viewTime);
+        }
     }
     
     //fade items when needed
