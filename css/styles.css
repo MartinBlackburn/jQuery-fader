@@ -48,10 +48,6 @@ img {
     left: 0;
 }
 
-.fader .faderItem.selected {
-    position: relative;
-}
-
 .fader .faderControls {
     display: none;
 }

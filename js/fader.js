@@ -23,7 +23,7 @@ Fader = function(fader)
         
         resetTimer();
         fadeItem();
-    });
+    });    
     
     prevBtn.click(function(event) {
         event.preventDefault()
@@ -33,7 +33,7 @@ Fader = function(fader)
     });
     
     quickBtn.click(function(event) {
-        event.preventDefault()
+        event.preventDefault();
         
         if(!$(event.delegateTarget).hasClass("selected"))
         {
@@ -46,22 +46,40 @@ Fader = function(fader)
     });
     
     //variable for all slides
-    function slides() {
-        return fader.find(".faderItem");
-    }
+    var slides = fader.find(".faderItem");
     
     //variable for all controls
-    function controls() {
-        return fader.find(".quick");
-    }
+    var controls = fader.find(".quick");
     
-    //fadeout all slides
-    slides().fadeOut(0);
+    //fade out all slides
+    slides.fadeOut(0);
     
     //set first slide to selected, and fade it in
-    slides().first().addClass('selected');
-    slides().first().fadeIn(0);  
-    controls().first().addClass('selected');
+    slides.first().addClass('selected');
+    slides.first().fadeIn(0);  
+    controls.first().addClass('selected');
+    
+    //on resize calculate new highest slide height
+    var resizeTimer;
+    $(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(hasResized, 100);
+    });
+    
+    //set display to height of tallest slide
+    hasResized();
+    
+    function hasResized()
+    {
+        var highest = 0;
+        
+        slides.each(function()
+        {
+            highest = $(this).height();
+        });
+        
+        fader.find(".faderDisplay").css("height", highest);
+    }
     
     //auto scroll items
     var timer;
@@ -87,8 +105,8 @@ Fader = function(fader)
         var nextSlide = currentSlide + 1;
         
         //fade out current slide
-        slides().eq(currentSlide).removeClass('selected');
-        slides().eq(currentSlide).fadeOut(fadeTime);
+        slides.eq(currentSlide).removeClass('selected');
+        slides.eq(currentSlide).fadeOut(fadeTime);
         
         //if request for a certain slide
         if(slide)
@@ -104,22 +122,22 @@ Fader = function(fader)
             nextSlide = currentSlide - 1;
         }
         
-        // loop to start if reached the end
-        if (slides().size() == nextSlide) {
+        //loop to start if reached the end
+        if (slides.size() == nextSlide) {
             nextSlide = 0;
         }
         
         //fade in new slide
-        slides().eq(nextSlide).fadeIn(fadeTime);
-        slides().eq(nextSlide).addClass('selected');
+        slides.eq(nextSlide).fadeIn(fadeTime);
+        slides.eq(nextSlide).addClass('selected');
         
         //update controls
-        controls().removeClass('selected');
-        controls().eq(nextSlide).addClass('selected');
+        controls.removeClass('selected');
+        controls.eq(nextSlide).addClass('selected');
     }
 };
 
-$(function() 
+$(window).load(function()
 {
     $(".fader").each(function()
     {
