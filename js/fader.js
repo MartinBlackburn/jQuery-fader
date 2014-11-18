@@ -71,12 +71,14 @@ Fader = function(fader)
     
     function hasResized()
     {
-        var highest = 0;
+        var highest = [];
         
         slides.each(function()
         {
-            highest = $(this).height();
+            highest.push($(this).height());
         });
+        
+        highest = Math.max.apply(null, highest);
         
         fader.find(".faderDisplay").css("height", highest);
     }
